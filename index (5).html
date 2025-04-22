@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita Terkini - Miko Lebak News</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #202124;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+        .news-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+        .news-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .news-content {
+            padding: 15px;
+        }
+        .news-title {
+            font-size: 1.2em;
+            margin: 0 0 10px;
+            color: #202124;
+        }
+        .news-desc {
+            font-size: 0.95em;
+            color: #555;
+        }
+        footer {
+            background: #202124;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    
+<header>
+    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+        <h1>Berita Terkini - Miko Lebak News</h1>
+        <div>
+            <input type="text" id="searchInput" placeholder="Cari berita..." style="padding: 8px; border-radius: 5px; border: none;">
+            <button onclick="toggleDarkMode()" style="margin-left: 10px; padding: 8px 12px; border: none; border-radius: 5px; background: #5f6368; color: white;">Dark Mode</button>
+        </div>
+    </div>
+    <nav style="margin-top: 15px;">
+        <ul style="list-style: none; display: flex; gap: 15px; padding-left: 0; justify-content: center; flex-wrap: wrap;">
+            <li><a href="#" style="color: white; text-decoration: none;">Semua</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;">Teknologi</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;">Olahraga</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;">Politik</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;">Ekonomi</a></li>
+            <li><a href="#" style="color: white; text-decoration: none;">Hiburan</a></li>
+        </ul>
+    </nav>
+
+        <h1>Berita Terkini - Miko Lebak News</h1>
+    </header>
+
+    <div class="news-container">
+        <div class="news-card">
+            <img class="news-image" src="https://source.unsplash.com/400x200/?news" alt="Berita">
+            <div class="news-content">
+                <h2 class="news-title">Berita Pertama Hari Ini</h2>
+                <p class="news-desc">Ini adalah contoh deskripsi berita pertama yang ditampilkan dengan tampilan menarik seperti Google News.</p>
+            </div>
+        </div>
+        <div class="news-card">
+            <img class="news-image" src="https://source.unsplash.com/400x200/?technology" alt="Berita">
+            <div class="news-content">
+                <h2 class="news-title">Inovasi Teknologi Terbaru</h2>
+                <p class="news-desc">Dunia teknologi berkembang sangat pesat. Berikut ini adalah inovasi yang sedang tren tahun ini.</p>
+            </div>
+        </div>
+        <div class="news-card">
+            <img class="news-image" src="https://source.unsplash.com/400x200/?sports" alt="Berita">
+            <div class="news-content">
+                <h2 class="news-title">Hasil Pertandingan Sepak Bola</h2>
+                <p class="news-desc">Pertandingan semalam antara dua tim besar menghasilkan skor mengejutkan. Simak ulasannya di sini.</p>
+            </div>
+        </div>
+    
+        <div class="news-card">
+            <img class="news-image" src="https://source.unsplash.com/400x200/?politics" alt="Berita">
+            <div class="news-content">
+                <h2 class="news-title">Berita Politik Hari Ini</h2>
+                <p class="news-desc">Situasi politik nasional sedang memanas menjelang pemilu mendatang. Simak berita lengkapnya.</p>
+            </div>
+        </div>
+        <div class="news-card">
+            <img class="news-image" src="https://source.unsplash.com/400x200/?economy" alt="Berita">
+            <div class="news-content">
+                <h2 class="news-title">Update Ekonomi Indonesia</h2>
+                <p class="news-desc">Perkembangan terbaru dari sektor ekonomi nasional dan dampaknya terhadap masyarakat.</p>
+            </div>
+        </div>
+        <div class="news-card">
+            <img class="news-image" src="https://source.unsplash.com/400x200/?health" alt="Berita">
+            <div class="news-content">
+                <h2 class="news-title">Kesehatan dan Gaya Hidup</h2>
+                <p class="news-desc">Tips kesehatan untuk menjaga daya tahan tubuh di tengah cuaca yang tidak menentu.</p>
+            </div>
+        </div>
+        <div class="news-card">
+            <img class="news-image" src="https://source.unsplash.com/400x200/?entertainment" alt="Berita">
+            <div class="news-content">
+                <h2 class="news-title">Dunia Hiburan Terkini</h2>
+                <p class="news-desc">Gosip selebriti, film baru, dan konser musik yang wajib kamu ketahui minggu ini.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2025 Miko Lebak News. All rights reserved.
+    </footer>
+
+<script>
+function toggleDarkMode() {
+    document.body.classList.toggle("dark-mode");
+}
+
+document.getElementById("searchInput").addEventListener("input", function() {
+    const query = this.value.toLowerCase();
+    const cards = document.querySelectorAll(".news-card");
+    cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(query) ? "block" : "none";
+    });
+});
+</script>
+<style>
+.dark-mode {
+    background-color: #121212;
+    color: #ddd;
+}
+.dark-mode header, .dark-mode footer {
+    background-color: #1e1e1e;
+}
+.dark-mode .news-card {
+    background-color: #1f1f1f;
+    color: #ddd;
+}
+.dark-mode .news-title {
+    color: #fff;
+}
+</style>
+
+<script>
+document.querySelectorAll(".news-card").forEach((card, index) => {
+    const commentBox = document.createElement("div");
+    commentBox.innerHTML = `
+        <div style="margin-top: 10px;">
+            <textarea id="comment-${index}" placeholder="Tulis komentar..." style="width:100%;padding:8px;border-radius:5px;border:1px solid #ccc;"></textarea>
+            <button onclick="postComment(${index})" style="margin-top:5px;padding:6px 12px;border:none;border-radius:5px;background:#1a73e8;color:white;">Kirim</button>
+            <div id="comments-${index}" style="margin-top:10px;font-size:0.9em;"></div>
+        </div>
+    `;
+    card.querySelector(".news-content").appendChild(commentBox);
+});
+
+function postComment(index) {
+    const textarea = document.getElementById(`comment-${index}`);
+    const commentsDiv = document.getElementById(`comments-${index}`);
+    if (textarea.value.trim() !== "") {
+        const comment = document.createElement("p");
+        comment.textContent = textarea.value;
+        comment.style.margin = "5px 0";
+        commentsDiv.appendChild(comment);
+        textarea.value = "";
+    }
+}
+</script>
+
+</body>
+
+</html>
