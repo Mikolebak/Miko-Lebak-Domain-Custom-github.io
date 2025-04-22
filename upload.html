@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Upload Berita - Miko Lebak News</title>
+  <style>
+    body { font-family: Arial; margin: 20px; background: #f9f9f9; }
+    h1 { text-align: center; }
+    form { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc; }
+    input, textarea { width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
+    button { background: #007bff; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+    .news-card { background: white; padding: 15px; border-radius: 8px; margin: 20px auto; max-width: 600px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .news-card img { width: 100%; border-radius: 5px; }
+    .news-title { font-size: 1.2em; margin-top: 10px; }
+    .news-desc { color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Upload Berita Baru</h1>
+  <form id="newsForm">
+    <input type="text" id="title" placeholder="Judul Berita" required />
+    <textarea id="desc" placeholder="Deskripsi Berita" rows="4" required></textarea>
+    <input type="text" id="image" placeholder="Link Gambar (https://...)" required />
+    <button type="submit">Tambah Berita</button>
+  </form>
+
+  <div id="newsList"></div>
+
+  <script>
+    const form = document.getElementById('newsForm');
+    const newsList = document.getElementById('newsList');
+
+    function renderNews() {
+      const data = JSON.parse(localStorage.getItem("berita")) || [];
+      newsList.innerHTML = "";
+      data.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "news-card";
+        card.innerHTML = `
+          <img src="${item.image}" alt="gambar" />
+          <div class="news-title">${item.title}</div>
+          <div class="news-desc">${item.desc}</div>
+        `;
+        newsList.appendChild(card);
+      });
+    }
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const title = document.getElementById("title").value;
+      const desc = document.getElementById("desc").value;
+      const image = document.getElementById("image").value;
+
+      const beritaBaru = { title, desc, image };
+      const berita = JSON.parse(localStorage.getItem("berita")) || [];
+      berita.unshift(beritaBaru);
+      localStorage.setItem("berita", JSON.stringify(berita));
+
+      form.reset();
+      renderNews();
+    });
+
+    renderNews();
+  </script>
+</body>
+</html>
